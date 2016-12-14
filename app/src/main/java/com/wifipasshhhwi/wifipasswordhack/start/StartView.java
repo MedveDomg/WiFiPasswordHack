@@ -7,5 +7,7 @@ import java.util.ArrayList;
  */
 
 public interface StartView {
-    ArrayList navigateToHome();
+
+    void navigateToHome(ArrayList list);
+
 }
