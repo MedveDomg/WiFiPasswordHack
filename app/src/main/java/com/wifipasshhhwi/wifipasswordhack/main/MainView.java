@@ -1,5 +1,7 @@
 package com.wifipasshhhwi.wifipasswordhack.main;
 
+import android.net.wifi.ScanResult;
+
 import java.util.ArrayList;
 
 /**
@@ -8,4 +10,6 @@ import java.util.ArrayList;
 
 public interface MainView {
     void onWifiClick(int wifiPosition);
+
+    void setWifiNetworks(ArrayList<ScanResult> list);
 }

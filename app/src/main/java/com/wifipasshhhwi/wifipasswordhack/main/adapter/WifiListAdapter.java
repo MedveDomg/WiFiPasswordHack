@@ -3,6 +3,7 @@ package com.wifipasshhhwi.wifipasswordhack.main.adapter;
 import android.content.Context;
 import android.net.wifi.ScanResult;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,18 +23,21 @@ import butterknife.ButterKnife;
  */
 
 public class WifiListAdapter extends RecyclerView.Adapter<WifiListAdapter.WifiViewHolder> {
-    private ArrayList<ScanResult> wifiNetworks;
+    private ArrayList<ScanResult> wifiNetworks = new ArrayList<>();
+
+    private ArrayList list = new ArrayList();
 
     Context context;
 
     private static final String TAG = "WifiAdapter";
 
     private MainActivityImpl mainActivity;
+    private String wifiListAdapter;
 
 
-    public WifiListAdapter(MainActivityImpl mainActivity, Context context) {
+    public WifiListAdapter(MainActivityImpl mainActivity) {
         this.mainActivity = mainActivity;
-        this.context = context;
+//        this.context = context;
     }
 
     public static class WifiViewHolder extends RecyclerView.ViewHolder {
@@ -69,7 +73,28 @@ public class WifiListAdapter extends RecyclerView.Adapter<WifiListAdapter.WifiVi
         return holder;
     }
 
+    @Override
+    public void onBindViewHolder(WifiViewHolder holder, int position) {
+        holder.nameWifi.setText(wifiNetworks.get(position).SSID);
+        holder.singalWifi.setText("Signal: " + "4");
+        holder.keyWifi.setText(wifiNetworks.get(position).capabilities);
+    }
+
+    @Override
+    public int getItemCount() {
+        return wifiNetworks.size();
+    }
+
     private void onWifiClicked(int adapterPosition) {
-        mainActivity.onWifiClick(wifiNetworks.get(adapterPosition));
+        mainActivity.onWifiClick(adapterPosition);
+    }
+
+    public void updateWifiNetworks(ArrayList<ScanResult> list) {
+
+        Log.d(TAG, "list.size() = " + list.size());
+
+        this.wifiNetworks.clear();
+        this.wifiNetworks.addAll(list);
+        notifyDataSetChanged();
     }
 }

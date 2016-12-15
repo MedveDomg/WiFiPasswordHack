@@ -3,4 +3,5 @@
     <string name="wifi_hack">WIFI PASSWORD\nHACKER</string>
     <string name="start">START NOW</string>
     <string name="wifi_networks">WiFi Networks</string>
+    <string name="please_wait_main">Please wait while\nwe are hacking the network</string>
 </resources>

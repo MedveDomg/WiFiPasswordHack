@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loader_activity"
+    android:layout_margin="50dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wifipasshhhwi.wifipasswordhack.loader.LoaderActivityImpl">
+
+    <TextView
+        android:text="@string/please_wait_main"
+        android:layout_width="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/pleaseWait" />
+
+    <io.netopen.hotbitmapgg.library.view.RingProgressBar
+        android:id="@+id/progress_bar_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/pleaseWait"
+        app:max="100"
+        app:ringColor="@color/colorRed"
+        app:ringProgressColor="@color/colorRed"
+        app:ringWidth="20dp"
+        app:style="FILL"
+        app:textColor="@color/colorRed"
+        app:textIsShow="true"
+        app:textSize="16sp" />
+
+</RelativeLayout>
