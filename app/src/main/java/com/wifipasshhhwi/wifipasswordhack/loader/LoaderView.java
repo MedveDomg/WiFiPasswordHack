@@ -5,4 +5,7 @@ package com.wifipasshhhwi.wifipasswordhack.loader;
  */
 
 public interface LoaderView {
+    void askStartLoadingProgressBar();
+
+    void askDialogToDownload();
 }
